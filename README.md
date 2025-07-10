@@ -15,12 +15,26 @@ mvn -f mcp-server/pom.xml package
 java -jar mcp-server/target/mcp-server.jar
 ```
 
+## Running with Docker
+
+After building the JAR, you can package it into a Docker image:
+
+```
+docker build -t ipromt .
+```
+
+Run the container and interact with it over standard input:
+
+```
+docker run --rm -i ipromt
+```
+
 When the server is running, type `list` to display available prompt names or enter a prompt name to get its text. The server reads from standard input until EOF.
 
 
 ## GitHub Copilot configuration
 
-To use this MCP server with GitHub Copilot, add an entry to your `mcp.json` file. The `command` array should launch the JAR and Copilot will communicate with it over standard input:
+To use this MCP server with GitHub Copilot, add an entry to your `mcp.json` file. The `command` array should launch the server and Copilot will communicate with it over standard input. When running the JAR directly it looks like this:
 
 ```json
 {
@@ -35,5 +49,19 @@ To use this MCP server with GitHub Copilot, add an entry to your `mcp.json` file
 ```
 
 Place the JAR built from this repository in the location referenced by `command`. Copilot will start the process and send prompt requests via stdin.
+
+If you package the server into Docker instead, your `command` array should start the container:
+
+```json
+{
+  "servers": [
+    {
+      "id": "ipromt",
+      "command": ["docker", "run", "--rm", "-i", "ipromt"],
+      "stdin": true
+    }
+  ]
+}
+```
 
 
