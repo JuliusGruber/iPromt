@@ -23,13 +23,25 @@ After building the JAR, you can package it into a Docker image:
 docker build -t ipromt .
 ```
 
-Run the container and interact with it over standard input:
+Run the container and interact with it over standard input. Each line you send must be a JSON-RPC request:
 
 ```
 docker run --rm -i ipromt
 ```
 
-When the server is running, type `list` to display available prompt names or enter a prompt name to get its text. The server reads from standard input until EOF.
+Example request to list available prompts:
+
+```json
+{"jsonrpc":"2.0","id":1,"method":"listPrompts"}
+```
+
+Example request to get a specific prompt:
+
+```json
+{"jsonrpc":"2.0","id":2,"method":"getPrompt","params":{"name":"hello"}}
+```
+
+The server will respond with a JSON-RPC response per request.
 
 
 ## GitHub Copilot configuration
