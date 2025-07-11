@@ -1,1 +1,9 @@
 /mcp-server/target/
+/.idea/compiler.xml
+/mcp-server/dependency-reduced-pom.xml
+/.idea/encodings.xml
+/.idea/iPromt.iml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
