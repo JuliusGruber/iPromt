@@ -18,8 +18,12 @@
             <version>2.17.1</version>
         </dependency>
     </dependencies>
+
     <build>
+        <finalName>mcp-server</finalName>
         <plugins>
+
+            <!-- Compile your Java 17 code -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
@@ -28,6 +32,8 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
+
+            <!-- Standard JAR manifest pointing at your Main class -->
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
@@ -39,6 +45,35 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <!-- Assembly Plugin to build a “jar-with-dependencies” -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <!-- Use the built-in descriptor to bundle all runtime deps -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <!-- Ensure the Main class is set in the fat JAR too -->
+                            <mainClass>com.flusspferd.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-jar-with-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
+
 </project>
