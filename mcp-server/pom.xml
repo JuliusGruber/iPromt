@@ -34,7 +34,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.Main</mainClass>
+                            <mainClass>com.flusspferd.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

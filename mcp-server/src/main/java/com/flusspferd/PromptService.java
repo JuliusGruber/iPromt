@@ -1,4 +1,4 @@
-package org.example;
+package com.flusspferd;
 
 import java.io.IOException;
 import java.io.InputStream;

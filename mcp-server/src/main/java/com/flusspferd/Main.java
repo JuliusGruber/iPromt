@@ -1,11 +1,11 @@
-package org.example;
+package com.flusspferd;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.example.mcp.GetPromptTool;
-import org.example.mcp.ListPromptsTool;
-import org.example.mcp.Tool;
+import com.flusspferd.mcp.GetPromptTool;
+import com.flusspferd.mcp.ListPromptsTool;
+import com.flusspferd.mcp.Tool;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

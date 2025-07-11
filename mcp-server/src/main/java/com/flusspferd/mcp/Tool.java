@@ -1,4 +1,4 @@
-package org.example.mcp;
+package com.flusspferd.mcp;
 
 import com.fasterxml.jackson.databind.JsonNode;
 

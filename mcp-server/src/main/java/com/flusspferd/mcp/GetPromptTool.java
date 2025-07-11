@@ -1,9 +1,9 @@
-package org.example.mcp;
+package com.flusspferd.mcp;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.example.PromptService;
+import com.flusspferd.PromptService;
 
 public class GetPromptTool implements Tool {
     private final PromptService service;
