@@ -1,0 +1,9 @@
+{
+  "servers": [
+    {
+      "id": "ipromt",
+      "command": ["java", "-jar", "mcp-server/target/mcp-server.jar"],
+      "stdin": true
+    }
+  ]
+}
