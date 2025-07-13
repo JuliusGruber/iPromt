@@ -31,6 +31,7 @@ public class PromptLoader {
         for (String name : props.stringPropertyNames()) {
             String text = props.getProperty(name);
             promptManager.newPrompt(name)
+                    .setDescription("Prompt: " + name)
                     .setHandler(args -> PromptResponse.withMessages(
                             PromptMessage.withAssistantRole(text)))
                     .register();
