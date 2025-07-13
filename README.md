@@ -1,7 +1,7 @@
 # iPromt - MCP Server Example
 
-This repository contains a minimal implementation of a Message Channel Protocol (MCP) server that exposes two simple tools backed by a prompt library.
-Prompts are loaded from `mcp-server/src/main/resources/prompts.properties` at startup.
+This repository contains a minimal implementation of a Message Channel Protocol (MCP) server built with [Quarkus](https://quarkus.io/) using the [Quarkiverse MCP Server](https://github.com/quarkiverse/quarkus-mcp-server) extension.
+Only a single prompt is served and the text is loaded from `mcp-server/src/main/resources/prompts.properties` at startup.
 
 The server understands the standard MCP methods (`initialize`, `getManifest`, `invokeTool`, `getToolMetadata`, `getToolSchema`, and `shutdown`) and communicates via JSON-RPC over standard input and output.
 
