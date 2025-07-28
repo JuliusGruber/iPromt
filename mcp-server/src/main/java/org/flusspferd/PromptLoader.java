@@ -1,4 +1,4 @@
-package org.example;
+package org.flusspferd;
 
 import io.quarkiverse.mcp.server.PromptManager;
 import io.quarkiverse.mcp.server.PromptMessage;

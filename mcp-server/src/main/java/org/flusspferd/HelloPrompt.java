@@ -1,4 +1,4 @@
-package org.example;
+package org.flusspferd;
 
 import io.quarkiverse.mcp.server.*;
 import jakarta.enterprise.context.*;
