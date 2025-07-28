@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "quarkus": {
+      "command": "java",
+      "args": ["-jar", "target/quarkus-app/quarkus-run.jar", "mcp:stdio"],
+      "transportType": "stdio"
+    }
+  }
+}
